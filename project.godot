@@ -416,13 +416,23 @@ _global_script_class_icons={
 
 [application]
 
-config/name="sunlight"
+config/name="Sunlight"
 run/main_scene="res://src/Testing/CharacterMovement/TestScene.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/icon.png"
 
 [autoload]
 
 GameMode="*res://src/GameMode.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/always_on_top=true
+
+[editor_plugins]
+
+enabled=PoolStringArray( "qodot", "zylann.hterrain" )
 
 [input]
 
@@ -466,7 +476,15 @@ move_left={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
  ]
 }
+gui_management={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":71,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+threads/thread_model=2
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://src/default_env.tres"
