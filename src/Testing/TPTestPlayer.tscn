@@ -1,0 +1,123 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://src/Testing/TPTestPlayer.gd" type="Script" id=1]
+[ext_resource path="res://src/Testing/Hero.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.35
+height = 1.18932
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "FlyLoop"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "FlyStart"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "LeftTurn"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "Walking"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Running"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=17]
+blend_point_0/node = SubResource( 14 )
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource( 15 )
+blend_point_1/pos = 3.5
+blend_point_2/node = SubResource( 16 )
+blend_point_2/pos = 8.0
+min_space = 0.0
+max_space = 8.0
+value_label = "blend_position"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "RightTurn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+advance_condition = "left_turn"
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+advance_condition = "end_left_turn"
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+advance_condition = "right_turn"
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+advance_condition = "end_right_turn"
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+advance_condition = "is_jump"
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+auto_advance = true
+xfade_time = 0.3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+advance_condition = "is_not_floor"
+xfade_time = 0.3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+advance_condition = "is_floor"
+xfade_time = 0.15
+
+[sub_resource type="AnimationNodeStateMachine" id=27]
+states/FlyLoop/node = SubResource( 11 )
+states/FlyLoop/position = Vector2( 517, 27 )
+states/FlyStart/node = SubResource( 12 )
+states/FlyStart/position = Vector2( 337, -53 )
+states/LeftTurn/node = SubResource( 13 )
+states/LeftTurn/position = Vector2( -56, -175 )
+states/Moving/node = SubResource( 17 )
+states/Moving/position = Vector2( 54, 27 )
+states/RightTurn/node = SubResource( 18 )
+states/RightTurn/position = Vector2( 158, -175 )
+transitions = [ "Moving", "LeftTurn", SubResource( 19 ), "LeftTurn", "Moving", SubResource( 20 ), "Moving", "RightTurn", SubResource( 21 ), "RightTurn", "Moving", SubResource( 22 ), "Moving", "FlyStart", SubResource( 23 ), "FlyStart", "FlyLoop", SubResource( 24 ), "Moving", "FlyLoop", SubResource( 25 ), "FlyLoop", "Moving", SubResource( 26 ) ]
+start_node = "Moving"
+graph_offset = Vector2( -425, -140.012 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=28]
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="Collider" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.94, 0 )
+shape = SubResource( 1 )
+
+[node name="SpringArm" type="SpringArm" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15391, 0 )
+spring_length = 5.0
+margin = 0.3
+
+[node name="Camera" type="Camera" parent="SpringArm"]
+current = true
+
+[node name="Hero_Model" type="Spatial" parent="."]
+
+[node name="Hero" parent="Hero_Model" instance=ExtResource( 2 )]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 27 )
+anim_player = NodePath("../Hero_Model/Hero/AnimationPlayer")
+active = true
+parameters/playback = SubResource( 28 )
+parameters/conditions/end_left_turn = false
+parameters/conditions/end_right_turn = false
+parameters/conditions/is_floor = true
+parameters/conditions/is_jump = false
+parameters/conditions/is_not_floor = false
+parameters/conditions/left_turn = false
+parameters/conditions/right_turn = false
+parameters/Moving/blend_position = -0.719243
