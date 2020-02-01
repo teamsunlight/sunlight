@@ -96,13 +96,16 @@ func _input(event):
 		camera_node.spring_length =clamp(camera_node.spring_length + Zoom_Step,ZOOM_MIN,ZOOM_MAX)
 
 	if event is InputEventMouseMotion:
-		camera_node.rotation.x -= event.relative.y*Sensitivity_X
-		camera_node.rotation.x = clamp(camera_node.rotation.x,MIN_ROT_Y,MAX_ROT_Y)
-		camera_node.rotation.y -= event.relative.x*Sensitivity_Y
-		if camera_node.rotation.y >PI:
-			camera_node.rotation.y -= PI*2
-		if camera_node.rotation.y < -PI:
-			camera_node.rotation.y += PI*2
+		var rotx = clamp(
+			camera_node.target_rot.x - event.relative.y * Sensitivity_X,
+			MIN_ROT_Y, MAX_ROT_Y
+		)
+		var roty = camera_node.target_rot.y - event.relative.x * Sensitivity_Y
+		if roty > PI:
+				roty -= 2 * PI
+		elif roty < -PI:
+				roty += 2 * PI
+		camera_node.set_target_rot(Vector3(rotx, roty, camera_node.target_rot.z))
 
 func _physics_process(delta):
 	if is_on_floor():
@@ -117,8 +120,8 @@ func _physics_process(delta):
 		if move_dir != Vector2.ZERO:
 			velocity.z = move_dir.x*current_speed
 			velocity.x = move_dir.y*current_speed
-			velocity = velocity.rotated(Vector3.UP, camera_node.rotation.y)
-			model_node.rotation.y = camera_node.rotation.y+PI
+			velocity = velocity.rotated(Vector3.UP, camera_node.target_rot.y)
+			model_node.rotation.y = camera_node.target_rot.y+PI
 			rot_model = min(rot_model+delta*Rotate_Model_Step, 1)
 			model_node.rotation.y += lerp(old_angle_model, target_angle_model, rot_model)
 			if model_node.rotation.y >PI:
@@ -129,7 +132,7 @@ func _physics_process(delta):
 			velocity=velocity.normalized() #We keep the old direction of movement, because we let go of the buttons and slow down
 			velocity.x = velocity.x*current_speed
 			velocity.z = velocity.z*current_speed
-			model_node.rotation.y = camera_node.rotation.y+PI
+			model_node.rotation.y = camera_node.target_rot.y+PI
 			rot_model = min(rot_model+delta*Rotate_Model_Step, 1)
 			model_node.rotation.y += lerp(old_angle_model, target_angle_model, rot_model)
 		if jumping:
