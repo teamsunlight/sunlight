@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/Testing/CharacterMovement/SunlightCharacter.gd" type="Script" id=1]
+[ext_resource path="res://src/Testing/CharacterMovement/Pj_SunLight_Test.OBJ" type="ArrayMesh" id=2]
 [ext_resource path="res://src/Testing/CharacterMovement/CharacterDisplay.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -74,7 +75,7 @@ xfade_time = 0.15
 
 [sub_resource type="AnimationNodeStateMachine" id=18]
 states/FlyLoop/node = SubResource( 2 )
-states/FlyLoop/position = Vector2( 517, 27 )
+states/FlyLoop/position = Vector2( 518, 27 )
 states/FlyStart/node = SubResource( 3 )
 states/FlyStart/position = Vector2( 338, -53 )
 states/LeftTurn/node = SubResource( 4 )
@@ -85,7 +86,7 @@ states/RightTurn/node = SubResource( 9 )
 states/RightTurn/position = Vector2( 158, -175 )
 transitions = [ "Moving", "LeftTurn", SubResource( 10 ), "LeftTurn", "Moving", SubResource( 11 ), "Moving", "RightTurn", SubResource( 12 ), "RightTurn", "Moving", SubResource( 13 ), "Moving", "FlyStart", SubResource( 14 ), "FlyStart", "FlyLoop", SubResource( 15 ), "Moving", "FlyLoop", SubResource( 16 ), "FlyLoop", "Moving", SubResource( 17 ) ]
 start_node = "Moving"
-graph_offset = Vector2( -367.5, -96.012 )
+graph_offset = Vector2( -348.5, -284.012 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
@@ -108,6 +109,12 @@ current = true
 
 [node name="CharacterDisplay" parent="Hero_Model" instance=ExtResource( 3 )]
 
+[node name="SculptedDisplay" type="MeshInstance" parent="Hero_Model"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.88856, 0 )
+visible = false
+mesh = ExtResource( 2 )
+material/0 = null
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 18 )
 anim_player = NodePath("../Hero_Model/CharacterDisplay/AnimationPlayer")
@@ -120,4 +127,4 @@ parameters/conditions/is_jump = false
 parameters/conditions/is_not_floor = false
 parameters/conditions/left_turn = false
 parameters/conditions/right_turn = false
-parameters/Moving/blend_position = 1.84116
+parameters/Moving/blend_position = 4.20217

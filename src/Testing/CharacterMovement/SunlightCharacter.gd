@@ -108,13 +108,13 @@ func _physics_process(delta):
 	if is_on_floor():
 		gravity = GRAVITY * GravityFloorMul * GravityExternalMul
 		if max_speed < current_speed or move_dir ==Vector2.ZERO:
-			#Если остановились или перешли на шаг (max_speed < current_speed), то замедляемся
+			#If you stop or go to the step (max_speed <current_speed), then slow down
 			current_speed -= Acceleration*delta
 		else:
 			current_speed += Acceleration*delta
 		current_speed = clamp(current_speed,0,Sprint_Max_Speed)
 
-		if move_dir !=Vector2.ZERO:
+		if move_dir != Vector2.ZERO:
 			velocity.z = move_dir.x*current_speed
 			velocity.x = move_dir.y*current_speed
 			velocity = velocity.rotated(Vector3.UP, camera_node.rotation.y)
@@ -126,9 +126,12 @@ func _physics_process(delta):
 			if model_node.rotation.y < -PI:
 				model_node.rotation.y += PI*2
 		else:
-			velocity=velocity.normalized() #Сохраняем старое направление движения, потому что мы отпустили кнопки и замедляемся
+			velocity=velocity.normalized() #We keep the old direction of movement, because we let go of the buttons and slow down
 			velocity.x = velocity.x*current_speed
 			velocity.z = velocity.z*current_speed
+			model_node.rotation.y = camera_node.rotation.y+PI
+			rot_model = min(rot_model+delta*Rotate_Model_Step, 1)
+			model_node.rotation.y += lerp(old_angle_model, target_angle_model, rot_model)
 		if jumping:
 			velocity.y += Jump_Speed
 			jumping = false
