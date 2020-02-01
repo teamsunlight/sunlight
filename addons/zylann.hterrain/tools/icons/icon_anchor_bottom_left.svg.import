@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/icon_anchor_bottom_left.svg-c59f20ff71f725e47b5fc556b5ef93c4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://addons/zylann.hterrain/tools/icons/icon_anchor_bottom_left.svg"
+dest_files=[ "res://.import/icon_anchor_bottom_left.svg-c59f20ff71f725e47b5fc556b5ef93c4.stex" ]
 
 [params]
 
