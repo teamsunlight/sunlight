@@ -417,6 +417,10 @@ config/icon="res://assets/icon.png"
 
 enabled=PoolStringArray( "qodot", "zylann.hterrain" )
 
+[autoload]
+
+GameMode="*res://src/GameMode.gd"
+
 [rendering]
 
 environment/default_environment="res://src/default_env.tres"
