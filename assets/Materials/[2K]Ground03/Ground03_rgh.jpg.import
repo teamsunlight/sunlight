@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/color.png-3c5eabad2a544a4e7e02f890494b33d4.stex"
+path="res://.import/Ground03_rgh.jpg-482d1ec39a9cdc1d4705b4c559596347.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/zylann.hterrain/color.png"
-dest_files=[ "res://.import/color.png-3c5eabad2a544a4e7e02f890494b33d4.stex" ]
+source_file="res://assets/Materials/[2K]Ground03/Ground03_rgh.jpg"
+dest_files=[ "res://.import/Ground03_rgh.jpg-482d1ec39a9cdc1d4705b4c559596347.stex" ]
 
 [params]
 
@@ -23,12 +23,12 @@ flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=1
-process/fix_alpha_border=false
+flags/srgb=2
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

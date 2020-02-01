@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
+[ext_resource path="res://assets/Materials/[2K]Ground03/Ground03_nrm.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/Materials/[2K]Ground03/Ground03_col.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/Ocean/Water.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Materials/[2K]Ground35/Ground35_nrm.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/Materials/[2K]Ground35/Ground35_col.jpg" type="Texture" id=7]
+[ext_resource path="res://src/Sky/Sky.tscn" type="PackedScene" id=8]
 
 [node name="World01" type="Node"]
+
+[node name="Sky" parent="." instance=ExtResource( 8 )]
 
 [node name="HTerrain" type="Spatial" parent="."]
 script = ExtResource( 2 )
@@ -12,14 +20,14 @@ chunk_size = 32
 shader_type = "Classic4"
 custom_shader = null
 shader_params/u_ground_uv_scale = 20
-shader_params/u_depth_blending = true
+shader_params/u_depth_blending = false
 shader_params/u_triplanar = false
 shader_params/u_globalmap_blend_start = null
 shader_params/u_globalmap_blend_distance = null
-ground/albedo_bump_0 = null
-ground/normal_roughness_0 = null
-ground/albedo_bump_1 = null
-ground/normal_roughness_1 = null
+ground/albedo_bump_0 = ExtResource( 4 )
+ground/normal_roughness_0 = ExtResource( 3 )
+ground/albedo_bump_1 = ExtResource( 7 )
+ground/normal_roughness_1 = ExtResource( 6 )
 ground/albedo_bump_2 = null
 ground/normal_roughness_2 = null
 ground/albedo_bump_3 = null
@@ -27,3 +35,6 @@ ground/normal_roughness_3 = null
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
+visible = false
+
+[node name="Water" parent="." instance=ExtResource( 5 )]
