@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Models/Altar/platformBig.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/Models/plataforma_grande.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://assets/Models/Altar/ALTAR.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Models/plataforma_chica.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/Models/plataforma_Final.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Environment" id=7]
 glow_enabled = true
@@ -78,3 +79,15 @@ material/0 = null
 material/1 = null
 
 [node name="ALTAR" parent="." instance=ExtResource( 3 )]
+
+[node name="plataforma_Final" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.92434, 0, 0, 0, 2.92434, 0, 0, 0, 2.92434, 12.0521, 16.5344, 24.9583 )
+
+[node name="plataforma_Final2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.92434, 0, 0, 0, 2.92434, 0, 0, 0, 2.92434, -21.7738, 2.13771, 13.732 )
+
+[node name="plataforma_Final3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.92434, 0, 0, 0, 2.92434, 0, 0, 0, 2.92434, -17.252, 20.4254, -15.5423 )
+
+[node name="plataforma_Final4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.92434, 0, 0, 0, 2.92434, 0, 0, 0, 2.92434, 6.82654, 9.63634, -20.0001 )
