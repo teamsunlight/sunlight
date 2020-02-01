@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/Textures/hiclipart.com.png" type="Texture" id=12]
 [ext_resource path="res://assets/Textures/hiclipart.com (1).png" type="Texture" id=13]
 [ext_resource path="res://src/Totem.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/Models/Altar/ALTAR.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ProceduralSky" id=1]
 sun_color = Color( 0.886275, 0.768627, 0.231373, 1 )
@@ -103,3 +104,6 @@ transform = Transform( -0.0951161, 0, -0.995466, 0, 1, 0, 0.995466, 0, -0.095116
 
 [node name="Totem7" parent="Totems" instance=ExtResource( 14 )]
 transform = Transform( 0.911928, -0.369763, 0.177938, 0.362919, 0.929126, 0.0708138, -0.191511, 0, 0.98149, 372.244, 14.3206, 115.078 )
+
+[node name="ALTAR" parent="." instance=ExtResource( 15 )]
+transform = Transform( -0.683885, 0, -0.729589, 0, 1, 0, 0.729589, 0, -0.683885, 364.968, 15.68, 336.156 )
