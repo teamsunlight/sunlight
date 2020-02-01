@@ -139,4 +139,5 @@ func _physics_process(delta):
 func _set_jumping(_jumping: bool):
 	jumping = _jumping
 	state_machine.set("parameters/conditions/is_jump", _jumping)
+	$
 	pass

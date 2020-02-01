@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Testing/TPTestPlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Ocean/Water.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Testing/Hero.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Level/World01.tscn" type="PackedScene" id=4]
 
@@ -12,5 +13,7 @@ visible = false
 
 [node name="TPPlayer" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.8413, 16.4865, 47.5454 )
+
+[node name="Water" parent="." instance=ExtResource( 2 )]
 
 [node name="World01" parent="." instance=ExtResource( 4 )]

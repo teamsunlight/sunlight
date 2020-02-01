@@ -10,5 +10,11 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.2152, 0 )
 material_override = ExtResource( 1 )
 script = ExtResource( 3 )
+wavelength = 50.0
+amplitude = 0.19
+noise_amplitude = 0.286
 
 [node name="Panel" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.958178, 0.286173, 0, -0.286173, 0.958178, 0, 12.25, 0 )
