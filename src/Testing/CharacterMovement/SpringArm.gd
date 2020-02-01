@@ -5,10 +5,9 @@ var shaking: bool = false
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.scancode == KEY_E:
-		shake(0.2, 0.01)
+		shake(0.5, 0.02)
 
 func shake(duration, intensity):
-	# translation = Vector3(25555, 25, 5)
 	shaking = true
 	var time = 0.0
 	while time <= duration:
@@ -17,7 +16,7 @@ func shake(duration, intensity):
 		)
 		rotation = target_rot + random_rot * intensity
 		yield(get_tree(), "idle_frame")
-		time += 0.02 # TODO: Get delta time
+		time += get_process_delta_time()
 	rotation = target_rot
 	shaking = false
 
