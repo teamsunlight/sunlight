@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Material/glow_mat.tres" type="Material" id=1]
+[ext_resource path="res://assets/Material/rock.tres" type="Material" id=2]
+[ext_resource path="res://assets/Models/Altar/ALTAR.dae" type="PackedScene" id=3]
+
+[node name="ALTAR" instance=ExtResource( 3 )]
+
+[node name="Altar_Glow_Center" parent="." index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="Altar_Glow_Right" parent="." index="1"]
+material/0 = ExtResource( 1 )
+
+[node name="Altar_Glow_Left" parent="." index="2"]
+material/0 = ExtResource( 1 )
+
+[node name="Altar_Towers" parent="." index="3"]
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
+
+[node name="Altar_Platform" parent="." index="4"]
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
+
+[node name="Altar_Center" parent="." index="5"]
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
