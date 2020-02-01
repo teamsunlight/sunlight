@@ -13,6 +13,7 @@ material/0 = ExtResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="Altar_Glow_Left" parent="." index="2"]
+transform = Transform( 8.8774, 0, 0, 0, 8.8774, 0, 0, 0, 8.8774, -0.0299063, 0, 0 )
 material/0 = ExtResource( 1 )
 
 [node name="Altar_Towers" parent="." index="3"]

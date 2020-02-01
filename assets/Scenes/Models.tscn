@@ -1,83 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Models/Altar/platformBig.obj" type="ArrayMesh" id=1]
-
-[sub_resource type="VisualShaderNodeColorConstant" id=1]
-constant = Color( 0.308594, 0.308594, 0.308594, 1 )
-
-[sub_resource type="VisualShader" id=2]
-code = "shader_type spatial;
-
-
-
-void vertex() {
-// Output:0
-
-}
-
-void fragment() {
-// Color:2
-	vec3 n_out2p0;
-	float n_out2p1;
-	n_out2p0 = vec3(0.308594,0.308594,0.308594);
-	n_out2p1 = 1.000000;
-
-// Output:0
-	ALBEDO = n_out2p0;
-
-}
-
-void light() {
-// Output:0
-
-}
-"
-graph_offset = Vector2( -284, 8 )
-nodes/fragment/2/node = SubResource( 1 )
-nodes/fragment/2/position = Vector2( 65, 146 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-
-[sub_resource type="VisualShaderNodeColorConstant" id=4]
-constant = Color( 0.210526, 0.656583, 0.998047, 1 )
-
-[sub_resource type="VisualShader" id=5]
-code = "shader_type spatial;
-
-
-
-void vertex() {
-// Output:0
-
-}
-
-void fragment() {
-// Color:2
-	vec3 n_out2p0;
-	float n_out2p1;
-	n_out2p0 = vec3(0.210526,0.656583,0.998047);
-	n_out2p1 = 1.000000;
-
-// Output:0
-	ALBEDO = n_out2p0;
-	EMISSION = n_out2p0;
-
-}
-
-void light() {
-// Output:0
-
-}
-"
-graph_offset = Vector2( -284, 92.5 )
-nodes/fragment/2/node = SubResource( 4 )
-nodes/fragment/2/position = Vector2( -40, 240 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 0, 5, 2, 0, 0, 0 )
-
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
+[ext_resource path="res://assets/Models/plataforma_grande.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/Models/Altar/ALTAR.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Models/plataforma_chica.obj" type="ArrayMesh" id=4]
 
 [sub_resource type="Environment" id=7]
 glow_enabled = true
@@ -88,11 +14,67 @@ glow_enabled = true
 transform = Transform( 0.981765, 0, 0, 0, 0.981765, 0, 0, 0, 0.981765, 0, 0, 0 )
 visible = false
 mesh = ExtResource( 1 )
-material/0 = SubResource( 3 )
-material/1 = SubResource( 6 )
+material/0 = null
+material/1 = null
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.798594, -0.349474, -0.490017, 0.542578, 0.0656443, 0.837437, -0.260496, -0.934644, 0.24204, 0, 12.9833, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 environment = SubResource( 7 )
+
+[node name="plataforma_grande" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.553364, 22.4118, 23.732 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_grande2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.553364, 10.226, 23.732 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_grande3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.37175, 12.8598, 23.732 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_grande4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4029, 12.8598, -19.5869 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_grande5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0928, 12.8598, 10.0167 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_chica" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.70258, 19.5015, 30.9837 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_chica3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8681, 19.5015, 3.61494 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_chica4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8681, 29.9916, 11.7186 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="plataforma_chica2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1764, 19.5015, -4.17029 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="ALTAR" parent="." instance=ExtResource( 3 )]
