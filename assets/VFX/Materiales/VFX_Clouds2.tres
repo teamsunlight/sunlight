@@ -5,7 +5,6 @@
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
 flags_unshaded = true
-flags_no_depth_test = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
 vertex_color_use_as_albedo = true
@@ -19,7 +18,7 @@ params_alpha_scissor_threshold = 0.94
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-albedo_color = Color( 0.588235, 0.486275, 0.337255, 1 )
+albedo_color = Color( 0.294118, 0.0470588, 0.588235, 1 )
 albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 0.5, 0.5, 1 )
 uv1_offset = Vector3( 0, 0.5, 0 )

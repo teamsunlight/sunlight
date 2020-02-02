@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.s3tc.stex"
-path.etc="res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.etc.stex"
+path.s3tc="res://.import/Godot_VFX_LiquifyTest.png-a9571210306ee2bbb9b437d39006b97c.s3tc.stex"
+path.etc="res://.import/Godot_VFX_LiquifyTest.png-a9571210306ee2bbb9b437d39006b97c.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/VFX/Textures/Godot_VFX_Fire.png"
-dest_files=[ "res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.s3tc.stex", "res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.etc.stex" ]
+source_file="res://assets/VFX/Textures/Godot_VFX_LiquifyTest.png"
+dest_files=[ "res://.import/Godot_VFX_LiquifyTest.png-a9571210306ee2bbb9b437d39006b97c.s3tc.stex", "res://.import/Godot_VFX_LiquifyTest.png-a9571210306ee2bbb9b437d39006b97c.etc.stex" ]
 
 [params]
 

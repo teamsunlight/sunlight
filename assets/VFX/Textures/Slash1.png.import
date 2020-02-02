@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Slash1.png-f3dfce92266cd04edfc08b520fe2f740.s3tc.stex"
-path.etc2="res://.import/Slash1.png-f3dfce92266cd04edfc08b520fe2f740.etc2.stex"
+path.etc="res://.import/Slash1.png-f3dfce92266cd04edfc08b520fe2f740.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/VFX/Textures/Slash1.png"
-dest_files=[ "res://.import/Slash1.png-f3dfce92266cd04edfc08b520fe2f740.s3tc.stex", "res://.import/Slash1.png-f3dfce92266cd04edfc08b520fe2f740.etc2.stex" ]
+dest_files=[ "res://.import/Slash1.png-f3dfce92266cd04edfc08b520fe2f740.s3tc.stex", "res://.import/Slash1.png-f3dfce92266cd04edfc08b520fe2f740.etc.stex" ]
 
 [params]
 
