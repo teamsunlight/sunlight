@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/VFX/Materiales/ProcessMaterials/CloudsTrailsDark.tres" type="Material" id=1]
+[ext_resource path="res://assets/VFX/Textures/Godot_VFX_Sparks.png" type="Texture" id=2]
+[ext_resource path="res://assets/VFX/Meshes/Godot_VFX_FireGround.tres" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/VFX/Materiales/Shader/MeshesOscurosGround.tres" type="Material" id=4]
+[ext_resource path="res://assets/VFX/Materiales/VFX_Clouds2.tres" type="QuadMesh" id=5]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.159218, 1 ), 7.26848, 7.26848, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+max_value = 50.0
+_data = [ Vector2( 0, 8.75 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 2, 2, 0 )
+direction = Vector3( 0, 1, 0 )
+spread = 20.0
+gravity = Vector3( 0, 2, 0 )
+tangential_accel_curve = SubResource( 4 )
+scale = 0.2
+scale_curve = SubResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+vertex_color_use_as_albedo = true
+params_specular_mode = 4
+params_blend_mode = 1
+params_billboard_mode = 3
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 1.0
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.67451, 0, 0.94902, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+
+[node name="DARK_MESHES" type="Node"]
+
+[node name="VFX_MeshDark4" type="CSGMesh" parent="."]
+transform = Transform( -3.75054, 2.4643, 1.06012e-07, 0, -1.94646e-07, 4.48769, 2.4643, 3.75054, 1.64315e-07, 364.02, 14.3278, 316.946 )
+mesh = ExtResource( 3 )
+material = ExtResource( 4 )
+
+[node name="VFX_DarkClouds_Block" type="Particles" parent="VFX_MeshDark4"]
+transform = Transform( -0.218754, -8.88743e-05, 0.0424342, 0.0424342, -0.000458167, 0.218754, 1.84052e-09, 0.222831, 0.000466707, 1.28466, -0.810692, 0.470258 )
+amount = 100
+lifetime = 0.8
+randomness = 0.69
+visibility_aabb = AABB( -0.001, -0.001, -0.001, 0.002, 0.002, 0.002 )
+local_coords = false
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 5 )
+
+[node name="VFX_DarkClouds_Block2" type="Particles" parent="VFX_MeshDark4"]
+transform = Transform( -0.0477663, -0.000455849, 0.217652, 0.217652, -0.000100051, 0.0477663, 9.44032e-09, 0.222831, 0.0004667, -1.19746, 1.81043, 0.247902 )
+amount = 125
+lifetime = 0.9
+visibility_aabb = AABB( -0.001, -0.382926, -0.001, 0.002, 0.765852, 0.002 )
+local_coords = false
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 5 )
+
+[node name="VFX_DarkClouds_Block3" type="Particles" parent="VFX_MeshDark4"]
+transform = Transform( 0.177106, -0.000283228, 0.135231, 0.135231, 0.00037092, -0.177105, 5.86546e-09, 0.222831, 0.00046669, 5.19344, 0.406303, 0.158253 )
+amount = 100
+lifetime = 0.9
+randomness = 0.69
+visibility_aabb = AABB( -0.001, -0.001, -0.001, 0.002, 0.002, 0.002 )
+local_coords = false
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 5 )
+
+[node name="VFX_MeshDark3" type="CSGMesh" parent="."]
+transform = Transform( -3.75054, 2.4643, 1.06012e-07, 0, -1.94646e-07, 4.48769, 2.4643, 3.75054, 1.64315e-07, 360.746, 14.6411, 319.376 )
+mesh = ExtResource( 3 )
+material = ExtResource( 4 )
+
+[node name="Particles2" type="Particles" parent="VFX_MeshDark3"]
+transform = Transform( 0.701108, 0.713055, 3.09608e-08, -0.713055, 0.701108, -1.32825e-08, -3.09275e-08, -1.29639e-08, 1, -0.867142, 1.10848, -0.23756 )
+visibility_aabb = AABB( 0.0229258, -0.00588281, -0.001, 0.002, 0.002, 0.002 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="VFX_MeshDark6" type="CSGMesh" parent="."]
+transform = Transform( -4.46408, -0.459743, -2.16545e-08, 0, -1.94646e-07, 4.48769, -0.459744, 4.46408, 1.94343e-07, 355.952, 15.003, 319.198 )
+mesh = ExtResource( 3 )
+material = ExtResource( 4 )
+
+[node name="Particles" type="Particles" parent="VFX_MeshDark6"]
+transform = Transform( 1, 0, 0, 0, 1, 1.77636e-15, 1.06581e-14, 8.88178e-15, 1, 0, 0, -0.260282 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="VFX_MeshDark5" type="CSGMesh" parent="."]
+transform = Transform( -4.46408, -0.459743, -2.16545e-08, 0, -1.94646e-07, 4.48769, -0.459745, 4.46408, 1.94343e-07, 351.999, 13.763, 321.197 )
+mesh = ExtResource( 3 )
+material = ExtResource( 4 )
+
+[node name="Particles2" type="Particles" parent="VFX_MeshDark5"]
+transform = Transform( 1, 0, 0, 1.49012e-07, 1, -1.42109e-14, 1.42109e-14, 1.06581e-14, 1, 0, 0, 0 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )

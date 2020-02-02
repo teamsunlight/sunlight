@@ -22,18 +22,19 @@ curve = SubResource( 5 )
 
 [resource]
 emission_shape = 2
-emission_box_extents = Vector3( 0.26, 0.26, 0.26 )
-direction = Vector3( 0, 1, 0 )
-spread = 0.0
+emission_box_extents = Vector3( 0.35, 0.35, 0.35 )
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
 flatness = 1.0
 gravity = Vector3( 0, 0.25, 0 )
 angular_velocity = 238.72
 angular_velocity_random = 1.0
 angular_velocity_curve = SubResource( 2 )
 linear_accel_curve = SubResource( 4 )
+radial_accel = 2.0
 damping = 0.15
 angle = -240.0
 angle_random = 1.0
-scale = 0.25
+scale = 0.5
 scale_curve = SubResource( 6 )
 color = Color( 0.827451, 0.662745, 0.0313726, 1 )

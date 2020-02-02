@@ -11,7 +11,7 @@ curve = SubResource( 1 )
 
 [resource]
 emission_shape = 1
-emission_sphere_radius = 0.1
+emission_sphere_radius = 0.2
 direction = Vector3( 0, 0, 0 )
 spread = 2.0
 gravity = Vector3( 0, 2, 0 )
@@ -27,7 +27,7 @@ damping = 2.0
 damping_random = 1.0
 angle = 720.0
 angle_random = 1.0
-scale = 5.0
+scale = 0.5
 scale_random = 0.35
 scale_curve = SubResource( 2 )
 color_ramp = ExtResource( 1 )
