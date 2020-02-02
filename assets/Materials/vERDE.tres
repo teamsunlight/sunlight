@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=2]
 
 [sub_resource type="VisualShaderNodeColorConstant" id=1]
-constant = Color( 0.136719, 0.117493, 0.117493, 1 )
+constant = Color( 0.261719, 0.169069, 0.0245361, 1 )
 
 [sub_resource type="VisualShaderNodeColorConstant" id=2]
 
@@ -19,7 +19,7 @@ void fragment() {
 // Color:2
 	vec3 n_out2p0;
 	float n_out2p1;
-	n_out2p0 = vec3(0.136719,0.117493,0.117493);
+	n_out2p0 = vec3(0.261719,0.169069,0.024536);
 	n_out2p1 = 1.000000;
 
 // Color:3
@@ -39,7 +39,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 0, 300 )
+graph_offset = Vector2( 0, 150 )
 nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( 60, 200 )
 nodes/fragment/3/node = SubResource( 2 )
