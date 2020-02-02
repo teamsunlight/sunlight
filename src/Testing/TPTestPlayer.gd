@@ -1,12 +1,14 @@
 extends KinematicBody
 
+class_name MainCharacter
+
 export var Sensitivity_X: float = 0.01
 export var Sensitivity_Y: float = 0.01
 
 export var Jump_Speed: float = 15.0
 export var Acceleration: float = 10
-export var Walk_Max_Speed: float = 4
-export var Sprint_Max_Speed: float = 8
+export var Walk_Max_Speed: float = 6
+export var Sprint_Max_Speed: float = 10
 export var Rotate_Model_Step: float = PI * 2.0
 export var GravityFloorMul: float = 20.0
 export var GravityFlyMul: float = 3.0
@@ -131,7 +133,7 @@ func _physics_process(delta):
 		gravity = GRAVITY * GravityFlyMul * GravityExternalMul
 	
 	velocity.y -= gravity * delta
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide(velocity, Vector3.UP,true)
 	
 	state_machine.set("parameters/conditions/is_floor", is_on_floor())
 	state_machine.set("parameters/conditions/is_not_floor", !is_on_floor())

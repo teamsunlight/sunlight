@@ -7,87 +7,87 @@
 radius = 0.35
 height = 1.18932
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "FlyLoop"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "FlyStart"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "LeftTurn"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Walking"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Running"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=17]
-blend_point_0/node = SubResource( 14 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=8]
+blend_point_0/node = SubResource( 5 )
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource( 15 )
+blend_point_1/node = SubResource( 6 )
 blend_point_1/pos = 3.5
-blend_point_2/node = SubResource( 16 )
+blend_point_2/node = SubResource( 7 )
 blend_point_2/pos = 8.0
 min_space = 0.0
 max_space = 8.0
 value_label = "blend_position"
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "RightTurn"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 advance_condition = "left_turn"
 xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 advance_condition = "end_left_turn"
 xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 advance_condition = "right_turn"
 xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
 advance_condition = "end_right_turn"
 xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
 advance_condition = "is_jump"
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 switch_mode = 2
 auto_advance = true
 xfade_time = 0.3
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
 advance_condition = "is_not_floor"
 xfade_time = 0.3
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
 advance_condition = "is_floor"
 xfade_time = 0.15
 
-[sub_resource type="AnimationNodeStateMachine" id=27]
-states/FlyLoop/node = SubResource( 11 )
+[sub_resource type="AnimationNodeStateMachine" id=18]
+states/FlyLoop/node = SubResource( 2 )
 states/FlyLoop/position = Vector2( 517, 27 )
-states/FlyStart/node = SubResource( 12 )
+states/FlyStart/node = SubResource( 3 )
 states/FlyStart/position = Vector2( 337, -53 )
-states/LeftTurn/node = SubResource( 13 )
+states/LeftTurn/node = SubResource( 4 )
 states/LeftTurn/position = Vector2( -56, -175 )
-states/Moving/node = SubResource( 17 )
+states/Moving/node = SubResource( 8 )
 states/Moving/position = Vector2( 54, 27 )
-states/RightTurn/node = SubResource( 18 )
+states/RightTurn/node = SubResource( 9 )
 states/RightTurn/position = Vector2( 158, -175 )
-transitions = [ "Moving", "LeftTurn", SubResource( 19 ), "LeftTurn", "Moving", SubResource( 20 ), "Moving", "RightTurn", SubResource( 21 ), "RightTurn", "Moving", SubResource( 22 ), "Moving", "FlyStart", SubResource( 23 ), "FlyStart", "FlyLoop", SubResource( 24 ), "Moving", "FlyLoop", SubResource( 25 ), "FlyLoop", "Moving", SubResource( 26 ) ]
+transitions = [ "Moving", "LeftTurn", SubResource( 10 ), "LeftTurn", "Moving", SubResource( 11 ), "Moving", "RightTurn", SubResource( 12 ), "RightTurn", "Moving", SubResource( 13 ), "Moving", "FlyStart", SubResource( 14 ), "FlyStart", "FlyLoop", SubResource( 15 ), "Moving", "FlyLoop", SubResource( 16 ), "FlyLoop", "Moving", SubResource( 17 ) ]
 start_node = "Moving"
 graph_offset = Vector2( -425, -140.012 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=28]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -110,10 +110,10 @@ far = 8192.0
 [node name="Hero" parent="Hero_Model" instance=ExtResource( 2 )]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 27 )
+tree_root = SubResource( 18 )
 anim_player = NodePath("../Hero_Model/Hero/AnimationPlayer")
 active = true
-parameters/playback = SubResource( 28 )
+parameters/playback = SubResource( 19 )
 parameters/conditions/end_left_turn = false
 parameters/conditions/end_right_turn = false
 parameters/conditions/is_floor = true

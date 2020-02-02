@@ -12,7 +12,7 @@ transform = Transform( 0.01, 0, 0, 0, -4.37114e-10, -0.01, 0, 0.01, -4.37114e-10
 visible = false
 
 [node name="TPPlayer" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 243.287, 21.0537, 238.793 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 114.002, 108.142, 358.573 )
 
 [node name="Water" parent="." instance=ExtResource( 2 )]
 
