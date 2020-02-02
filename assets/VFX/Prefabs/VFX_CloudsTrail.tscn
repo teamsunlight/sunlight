@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/VFX/Materiales/ProcessMaterials/CloudsTrails.tres" type="Material" id=1]
+[ext_resource path="res://assets/VFX/Materiales/VFX_Clouds.tres" type="QuadMesh" id=2]
+
+[node name="VFX_CloudsTrail" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 0.999998, 0.00209439, 0, -0.00209439, 0.999998, 316.579, 14.9325, 310.452 )
+amount = 6
+lifetime = 0.6
+randomness = 0.69
+visibility_aabb = AABB( -0.001, -0.001, -0.001, 0.002, 0.002, 0.002 )
+local_coords = false
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 2 )

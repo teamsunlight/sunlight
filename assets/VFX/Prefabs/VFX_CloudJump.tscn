@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/VFX/Materiales/ProcessMaterials/CloudsJump.tres" type="Material" id=1]
+[ext_resource path="res://assets/VFX/Materiales/VFX_Clouds.tres" type="QuadMesh" id=2]
+
+[node name="VFX_CloudJump" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 316.579, 21.9401, 310.834 )
+emitting = false
+amount = 15
+lifetime = 0.8
+one_shot = true
+preprocess = 0.17
+explosiveness = 1.0
+visibility_aabb = AABB( -0.001, -0.001, -0.001, 0.002, 0.002, 0.002 )
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 2 )
