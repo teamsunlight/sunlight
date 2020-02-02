@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/CharacterMovement/SunlightCharacter.gd" type="Script" id=1]
 [ext_resource path="res://src/CharacterMovement/Pj_SunLight_Test.OBJ" type="ArrayMesh" id=2]
@@ -19,29 +19,24 @@ animation = "MangoArmature|JumpStart"
 [sub_resource type="AnimationNodeAnimation" id=4]
 animation = "MangoArmature|Run"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
-animation = "MangoArmature|Walk"
-
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "MangoArmature|Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "MangoArmature|Run"
 
-[sub_resource type="AnimationNodeAnimation" id=23]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "MangoArmature|Walk"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id=8]
-blend_point_0/node = SubResource( 6 )
-blend_point_0/pos = 8.78
-blend_point_1/node = SubResource( 21 )
-blend_point_1/pos = 0.0
-blend_point_2/node = SubResource( 22 )
-blend_point_2/pos = 8.0
-blend_point_3/node = SubResource( 23 )
-blend_point_3/pos = 4.0
+blend_point_0/node = SubResource( 5 )
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource( 6 )
+blend_point_1/pos = 8.0
+blend_point_2/node = SubResource( 7 )
+blend_point_2/pos = 4.0
 min_space = 0.0
-max_space = 8.0
+max_space = 32.0
 value_label = "blend_position"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
@@ -86,16 +81,16 @@ states/FlyLoop/position = Vector2( 518, 27 )
 states/FlyStart/node = SubResource( 3 )
 states/FlyStart/position = Vector2( 336, -53 )
 states/LeftTurn/node = SubResource( 4 )
-states/LeftTurn/position = Vector2( -183, -182 )
+states/LeftTurn/position = Vector2( -182, -182 )
 states/Moving/node = SubResource( 8 )
 states/Moving/position = Vector2( 32, 27 )
 states/RightTurn/node = SubResource( 9 )
 states/RightTurn/position = Vector2( 161, -175 )
 transitions = [ "Moving", "LeftTurn", SubResource( 10 ), "LeftTurn", "Moving", SubResource( 11 ), "Moving", "RightTurn", SubResource( 12 ), "RightTurn", "Moving", SubResource( 13 ), "Moving", "FlyStart", SubResource( 14 ), "FlyStart", "FlyLoop", SubResource( 15 ), "Moving", "FlyLoop", SubResource( 16 ), "FlyLoop", "Moving", SubResource( 17 ) ]
 start_node = "Moving"
-graph_offset = Vector2( -311.5, -185.012 )
+graph_offset = Vector2( -508.5, -185.012 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
 [node name="SunlightCharacter" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -126,16 +121,12 @@ mesh = ExtResource( 2 )
 material/0 = null
 
 [node name="MangoSkeleton" parent="Hero_Model" instance=ExtResource( 4 )]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
-
-[node name="MangoArmature" parent="Hero_Model/MangoSkeleton" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0, 0 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 18 )
 anim_player = NodePath("../Hero_Model/MangoSkeleton/AnimationPlayer")
 active = true
-parameters/playback = SubResource( 20 )
+parameters/playback = SubResource( 19 )
 parameters/conditions/end_left_turn = false
 parameters/conditions/end_right_turn = false
 parameters/conditions/is_floor = true
@@ -143,6 +134,6 @@ parameters/conditions/is_jump = false
 parameters/conditions/is_not_floor = false
 parameters/conditions/left_turn = false
 parameters/conditions/right_turn = false
-parameters/Moving/blend_position = 8.02323
+parameters/Moving/blend_position = 8.84068
 
 [editable path="Hero_Model/MangoSkeleton"]

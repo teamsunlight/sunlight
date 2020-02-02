@@ -110,3 +110,5 @@ texture = ExtResource( 6 )
 transform = Transform( 0.993854, 3.08922, 0.0406414, 0.0129646, 7.68983, -0.966504, -0.109942, 28.8327, 0.253417, -1.34216, -8.46305, -31.2735 )
 mesh = SubResource( 7 )
 material/0 = null
+[connection signal="body_entered" from="AreaB" to="." method="_on_AreaB_body_entered"]
+[connection signal="body_exited" from="AreaB" to="." method="_on_AreaB_body_exited"]

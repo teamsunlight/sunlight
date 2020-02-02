@@ -5,10 +5,17 @@ extends Node
 # var a = 2
 # var b = "text"
 
-var tower_count = 0
+var tower_count = 0 setget set_tower_count
+
+func set_tower_count(new_tower_count):
+	print("Tower count reached %d" % new_tower_count)
+	tower_count = new_tower_count
+	if tower_count >= 2:
+		level.hide_darkness()
 
 var towerB = false
-var towerA = true
+var towerA = false
+var level: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

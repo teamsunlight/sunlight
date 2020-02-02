@@ -48,7 +48,7 @@ albedo_texture = ExtResource( 2 )
 [sub_resource type="QuadMesh" id=7]
 material = SubResource( 6 )
 
-[node name="DARK_MESHES" type="Node"]
+[node name="DARK_MESHES" type="Spatial"]
 
 [node name="VFX_MeshDark4" type="CSGMesh" parent="."]
 transform = Transform( -3.75054, 2.4643, 1.06012e-07, 0, -1.94646e-07, 4.48769, 2.4643, 3.75054, 1.64315e-07, 364.02, 14.3278, 316.946 )

@@ -42,6 +42,11 @@ func _ready():
 
 func _input(event):
 	# Player actions processing
+	if event is InputEventKey and event.pressed and event.scancode == KEY_J:
+		Sprint_Max_Speed *= 8
+	if event is InputEventKey and event.pressed and event.scancode == KEY_K:
+		Sprint_Max_Speed /= 8
+		 
 	if Input.is_action_just_pressed("gui_management"):
 		GUI_management = !GUI_management
 	if GUI_management:
@@ -143,7 +148,7 @@ func _physics_process(delta):
 		gravity = GRAVITY * GravityFlyMul * GravityExternalMul
 
 	velocity.y -= gravity * delta
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide(velocity, Vector3.UP, true)
 
 	state_machine.set("parameters/conditions/is_floor", is_on_floor())
 	state_machine.set("parameters/conditions/is_not_floor", !is_on_floor())

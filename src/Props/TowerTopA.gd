@@ -7,7 +7,7 @@ extends Spatial
 var active = true
 
 func _input(event):
-	if event.is_action_pressed("interact") and active and !GameMode.towerA:
+	if event.is_action_pressed("interact") and active and GameMode.towerA:
 		GameMode.tower_count += 1
 		$Sprite3D.hide()
 		$EffectA.show()
@@ -32,14 +32,14 @@ func _ready():
 
 
 func _on_Area_body_entered(body):
-	if body is MainCharacter and active:
+	if body is SunlightCharacter and active:
 		#$Position3D/Label.show()
 		$Sprite3D.show()
 		GameMode.towerA = true
 
 
 func _on_Area_body_exited(body):
-	if body is MainCharacter:
+	if body is SunlightCharacter:
 		#$Position3D/Label.hide()
 		$Sprite3D.hide()
 		GameMode.towerA = false
