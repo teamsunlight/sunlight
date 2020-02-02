@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
@@ -30,6 +30,10 @@
 [ext_resource path="res://src/Level/World01.gd" type="Script" id=28]
 [ext_resource path="res://src/CharacterMovement/SunlightCharacter.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/Postprocessing/WorldEnvironment.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/Audio/Audio.tscn" type="PackedScene" id=31]
+
+[sub_resource type="CylinderShape" id=10]
+radius = 6.0
 
 [sub_resource type="CylinderShape" id=1]
 
@@ -113,6 +117,8 @@ shader_params/u_bottom_ao = null
 
 [node name="WorldEnvironment2" parent="." instance=ExtResource( 30 )]
 
+[node name="Tween" type="Tween" parent="WorldEnvironment2"]
+
 [node name="Trees" type="Node" parent="."]
 
 [node name="Totems" type="Node" parent="."]
@@ -161,6 +167,19 @@ transform = Transform( 0.993256, -0.115849, -0.0045702, 0.114826, 0.97751, 0.176
 
 [node name="Altar" parent="." instance=ExtResource( 15 )]
 transform = Transform( -0.683885, 0, -0.729589, 0, 1, 0, 0.729589, 0, -0.683885, 364.968, 15.68, 336.156 )
+
+[node name="CollisionShape" parent="Altar/Altar_Platform/StaticBody" index="0"]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
+
+[node name="StaticBody" parent="Altar/Altar_Center" index="0"]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
+
+[node name="AltarArea" type="Area" parent="Altar"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.706589, 5.33039, 3.12939 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Altar/AltarArea"]
+transform = Transform( 1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.499405, -0.831339, -1.95709 )
+shape = SubResource( 10 )
 
 [node name="TowerATeleport" type="Position3D" parent="."]
 transform = Transform( -4.07125, 0, -0.426181, 0, 4.09351, 0, 0.426181, 0, -4.07125, 406.891, 113.516, 88.4434 )
@@ -242,6 +261,8 @@ shape = SubResource( 8 )
 
 [node name="AmbientSound" type="Node" parent="."]
 
+[node name="Audio" parent="AmbientSound" instance=ExtResource( 31 )]
+
 [node name="Rocks" type="Node" parent="."]
 
 [node name="Clouds" type="Node" parent="."]
@@ -278,6 +299,8 @@ transform = Transform( 9.86344, 0, 0, 0, 23.8354, 0, 0, 0, 9.86344, 117.183, 33.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.649, 16.9089, 34.8901 )
 
 [node name="Tween" type="Tween" parent="SunlightCharacter"]
+[connection signal="body_entered" from="Altar/AltarArea" to="." method="_on_AltarArea_body_entered"]
+[connection signal="body_exited" from="Altar/AltarArea" to="." method="_on_AltarArea_body_exited"]
 [connection signal="body_entered" from="Towers/TowerTopA/TeleportAreaA" to="." method="_on_TeleportAreaA_body_entered"]
 [connection signal="body_entered" from="Towers/TowerTopB/Area" to="." method="_on_Area_body_entered"]
 

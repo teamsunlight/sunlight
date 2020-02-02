@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/picturetopeople.org-b88cc7e2557aa8bf185143d4ebc40207e1a068fff245c42151.png-30581e2c6db972c87c2cfb5a53a3fab6.s3tc.stex"
+path.etc="res://.import/picturetopeople.org-b88cc7e2557aa8bf185143d4ebc40207e1a068fff245c42151.png-30581e2c6db972c87c2cfb5a53a3fab6.etc.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/Materials/picturetopeople.org-b88cc7e2557aa8bf185143d4ebc40207e1a068fff245c42151.png"
+dest_files=[ "res://.import/picturetopeople.org-b88cc7e2557aa8bf185143d4ebc40207e1a068fff245c42151.png-30581e2c6db972c87c2cfb5a53a3fab6.s3tc.stex", "res://.import/picturetopeople.org-b88cc7e2557aa8bf185143d4ebc40207e1a068fff245c42151.png-30581e2c6db972c87c2cfb5a53a3fab6.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

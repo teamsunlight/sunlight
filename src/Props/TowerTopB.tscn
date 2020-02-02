@@ -114,6 +114,7 @@ shape = SubResource( 5 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 0.3, 0, -2.79397e-09, 0, 0.3, 0, 2.79397e-09, 0, 0.3, 1.64972, -0.254446, -1.96626 )
+visible = false
 texture = ExtResource( 6 )
 
 [node name="Effect" type="MeshInstance" parent="."]

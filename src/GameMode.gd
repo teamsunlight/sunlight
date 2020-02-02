@@ -10,7 +10,9 @@ var tower_count = 0 setget set_tower_count
 func set_tower_count(new_tower_count):
 	print("Tower count reached %d" % new_tower_count)
 	tower_count = new_tower_count
-	if tower_count >= 2:
+	var char_camera: SunlightCamera = level.get_node("SunlightCharacter/SpringArm")
+	char_camera.shake(5, 0.01)
+	if tower_count >= 2:		
 		level.hide_darkness()
 
 var towerB = false
