@@ -5,8 +5,10 @@ extends Node
 # var a = 2
 # var b = "text"
 
-var tower_count = 0;
+var tower_count = 0
 
+var towerB = false
+var towerA = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

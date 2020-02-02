@@ -7,8 +7,8 @@ export var Sensitivity_Y: float = 0.01
 
 export var Jump_Speed: float = 15.0
 export var Acceleration: float = 10
-export var Walk_Max_Speed: float = 4
-export var Sprint_Max_Speed: float = 8
+export var Walk_Max_Speed: float = 6
+export var Sprint_Max_Speed: float = 10
 export var Rotate_Model_Step: float = PI * 2.0
 export var GravityFloorMul: float = 20.0
 export var GravityFlyMul: float = 3.0

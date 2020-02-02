@@ -53,7 +53,7 @@ func _ready():
 	update_waves()
 	
 	#cube_cam_inst = cube_cam.instance()
-	add_child(cube_cam_inst)
+	#add_child(cube_cam_inst)
 
 
 func _process(delta):

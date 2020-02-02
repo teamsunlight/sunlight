@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://assets/Materials/[2K]Rock26/Rock26_nrm.jpg" type="Texture" id=21]
 [ext_resource path="res://assets/Materials/[2K]Rock26/Rock26_col.jpg" type="Texture" id=22]
 [ext_resource path="res://src/Props/TowerTopB.tscn" type="PackedScene" id=23]
-[ext_resource path="res://assets/Audio/Audio.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/Materials/hiclipart.com (1).png" type="Texture" id=25]
 [ext_resource path="res://assets/Materials/hiclipart.com.png" type="Texture" id=26]
 
@@ -191,8 +190,6 @@ shape = SubResource( 8 )
 
 [node name="AmbientSound" type="Node" parent="."]
 
-[node name="Audio" parent="AmbientSound" instance=ExtResource( 24 )]
-
 [node name="Rocks" type="Node" parent="."]
 
 [node name="Clouds" type="Node" parent="."]
@@ -206,5 +203,7 @@ texture = ExtResource( 25 )
 transform = Transform( 2.99979, 0.0354468, 0, -0.0354468, 2.99979, 0, 0, 0, 3, 369.557, 167.38, 388.928 )
 billboard = 1
 texture = ExtResource( 26 )
+
+[editable path="Altar"]
 
 [editable path="Towers/TowerTopA"]
