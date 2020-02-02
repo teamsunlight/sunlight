@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/data.hterrain" type="Resource" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=2]
@@ -15,6 +15,15 @@
 [ext_resource path="res://assets/Textures/hiclipart.com (1).png" type="Texture" id=13]
 [ext_resource path="res://src/Totem.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/Models/Altar/ALTAR.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Models/plataforma_Final.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Props/TotemRockComplete.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Props/TotemRockSimple.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/Models/MUELLE.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://assets/Models/barquito.obj" type="ArrayMesh" id=20]
+[ext_resource path="res://assets/Materials/[2K]Rock26/Rock26_nrm.jpg" type="Texture" id=21]
+[ext_resource path="res://assets/Materials/[2K]Rock26/Rock26_col.jpg" type="Texture" id=22]
+[ext_resource path="res://assets/Materials/hiclipart.com (1).png" type="Texture" id=25]
+[ext_resource path="res://assets/Materials/hiclipart.com.png" type="Texture" id=26]
 
 [sub_resource type="ProceduralSky" id=1]
 sun_color = Color( 0.886275, 0.768627, 0.231373, 1 )
@@ -24,6 +33,18 @@ sun_energy = 50.0
 background_mode = 2
 background_sky = SubResource( 1 )
 tonemap_mode = 2
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.423529, 0.278431, 0.184314, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.243137, 0.14902, 0.101961, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.176471, 0.0862745, 0.0862745, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.427451, 0.266667, 0.172549, 1 )
 
 [node name="World01" type="Node"]
 
@@ -38,7 +59,7 @@ shader_type = "Classic4"
 custom_shader = null
 shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = false
-shader_params/u_triplanar = false
+shader_params/u_triplanar = true
 shader_params/u_globalmap_blend_start = null
 shader_params/u_globalmap_blend_distance = null
 ground/albedo_bump_0 = ExtResource( 4 )
@@ -47,8 +68,8 @@ ground/albedo_bump_1 = ExtResource( 7 )
 ground/normal_roughness_1 = ExtResource( 6 )
 ground/albedo_bump_2 = ExtResource( 5 )
 ground/normal_roughness_2 = ExtResource( 9 )
-ground/albedo_bump_3 = null
-ground/normal_roughness_3 = null
+ground/albedo_bump_3 = ExtResource( 22 )
+ground/normal_roughness_3 = ExtResource( 21 )
 
 [node name="HTerrainDetailLayer" type="Spatial" parent="HTerrain"]
 script = ExtResource( 10 )
@@ -105,5 +126,63 @@ transform = Transform( -0.0951161, 0, -0.995466, 0, 1, 0, 0.995466, 0, -0.095116
 [node name="Totem7" parent="Totems" instance=ExtResource( 14 )]
 transform = Transform( 0.911928, -0.369763, 0.177938, 0.362919, 0.929126, 0.0708138, -0.191511, 0, 0.98149, 372.244, 14.3206, 115.078 )
 
-[node name="ALTAR" parent="." instance=ExtResource( 15 )]
+[node name="placa_01" parent="Totems" instance=ExtResource( 17 )]
+transform = Transform( -0.936599, 0, 0.350403, 0, 1, 0, -0.350403, 0, -0.936599, 175.005, 22.703, 263.995 )
+
+[node name="placa_02" parent="Totems" instance=ExtResource( 17 )]
+transform = Transform( 0.974975, 0, -0.222314, -0.0395403, 0.984056, -0.173407, 0.21877, 0.177858, 0.95943, 171.423, 15.2505, 286.141 )
+
+[node name="placa_03" parent="Totems" instance=ExtResource( 17 )]
+transform = Transform( 0.688381, 0.183145, -0.701848, -0.128243, 0.983086, 0.130751, 0.713923, 0, 0.700224, 159.389, 16.5638, 283.17 )
+
+[node name="placa_04" parent="Totems" instance=ExtResource( 17 )]
+transform = Transform( 0.715423, 0.16723, -0.678383, 0.0278041, 0.963351, 0.2668, 0.698138, -0.209737, 0.684554, 157.096, 9.04765, 310.694 )
+
+[node name="placa_single" parent="Totems" instance=ExtResource( 18 )]
+transform = Transform( 0.089134, 0.980176, 0.176947, -0.995891, 0.0905631, 0, -0.0160249, -0.17622, 0.98422, 158.248, 16.5392, 286.99 )
+
+[node name="placa_single3" parent="Totems" instance=ExtResource( 18 )]
+transform = Transform( 0.476153, 0.86422, 0.162487, -0.866767, 0.492414, -0.0790205, -0.148302, -0.103213, 0.983541, 147.02, 12.8731, 199.823 )
+
+[node name="placa_single2" parent="Totems" instance=ExtResource( 18 )]
+transform = Transform( 0.993256, -0.115849, -0.0045702, 0.114826, 0.97751, 0.176888, -0.0160249, -0.17622, 0.98422, 156.053, 14.6682, 296.315 )
+
+[node name="Altar" parent="." instance=ExtResource( 15 )]
 transform = Transform( -0.683885, 0, -0.729589, 0, 1, 0, 0.729589, 0, -0.683885, 364.968, 15.68, 336.156 )
+
+[node name="Towers" type="Node" parent="."]
+
+[node name="TowerTopA" parent="Towers" instance=ExtResource( 16 )]
+transform = Transform( 4.0935, 0, 0, 0, 4.0935, 0, 0, 0, 4.0935, 396.727, 114.295, 83.7433 )
+
+[node name="TowerTopB" parent="Towers" instance=ExtResource( 16 )]
+transform = Transform( 4.0935, 0, 0, 0, 4.0935, 0, 0, 0, 4.0935, 109.493, 111.676, 350.898 )
+
+[node name="Details" type="Node" parent="."]
+
+[node name="MUELLE" type="MeshInstance" parent="Details"]
+transform = Transform( 2.34385, -0.0395387, 1.87211, -0.178125, 2.98102, 0.285969, -1.86403, -0.33458, 2.32668, 11.1744, -2.38909, -2.13126 )
+mesh = ExtResource( 19 )
+material/0 = SubResource( 3 )
+material/1 = SubResource( 4 )
+
+[node name="barquito" type="MeshInstance" parent="Details"]
+transform = Transform( 2.01977, 0, -2.21822, 0, 3, 0, 2.21822, 0, 2.01977, -13.2376, 1.30442, -16.6082 )
+mesh = ExtResource( 20 )
+material/0 = SubResource( 5 )
+material/1 = SubResource( 6 )
+material/2 = null
+
+[node name="AmbientSound" type="Node" parent="."]
+
+[node name="Rocks" type="Node" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 432.921, 144.702, 336.803 )
+billboard = 1
+texture = ExtResource( 25 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform( 2.99979, 0.0354468, 0, -0.0354468, 2.99979, 0, 0, 0, 3, 369.557, 167.38, 388.928 )
+billboard = 1
+texture = ExtResource( 26 )
