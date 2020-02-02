@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/CharacterMovement/SunlightCharacter.gd" type="Script" id=1]
 [ext_resource path="res://src/CharacterMovement/Pj_SunLight_Test.OBJ" type="ArrayMesh" id=2]
 [ext_resource path="res://src/CharacterMovement/CharacterDisplay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/CharacterMovement/Mango/MangoSkeleton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/CharacterMovement/SpringArm.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -10,36 +11,41 @@ radius = 0.35
 height = 1.18932
 
 [sub_resource type="AnimationNodeAnimation" id=2]
-animation = "FlyLoop"
+animation = "MangoArmature|JumpLoop"
 
 [sub_resource type="AnimationNodeAnimation" id=3]
-animation = "FlyStart"
+animation = "MangoArmature|JumpStart"
 
 [sub_resource type="AnimationNodeAnimation" id=4]
-animation = "LeftTurn"
-
-[sub_resource type="AnimationNodeAnimation" id=5]
-animation = "Idle"
+animation = "MangoArmature|Run"
 
 [sub_resource type="AnimationNodeAnimation" id=6]
-animation = "Walking"
+animation = "MangoArmature|Walk"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
-animation = "Running"
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "MangoArmature|Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "MangoArmature|Run"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "MangoArmature|Walk"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id=8]
-blend_point_0/node = SubResource( 5 )
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource( 6 )
-blend_point_1/pos = 3.5
-blend_point_2/node = SubResource( 7 )
+blend_point_0/node = SubResource( 6 )
+blend_point_0/pos = 8.78
+blend_point_1/node = SubResource( 21 )
+blend_point_1/pos = 0.0
+blend_point_2/node = SubResource( 22 )
 blend_point_2/pos = 8.0
+blend_point_3/node = SubResource( 23 )
+blend_point_3/pos = 4.0
 min_space = 0.0
 max_space = 8.0
 value_label = "blend_position"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
-animation = "RightTurn"
+animation = "MangoArmature|Run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
 advance_condition = "left_turn"
@@ -78,18 +84,18 @@ xfade_time = 0.15
 states/FlyLoop/node = SubResource( 2 )
 states/FlyLoop/position = Vector2( 518, 27 )
 states/FlyStart/node = SubResource( 3 )
-states/FlyStart/position = Vector2( 338, -53 )
+states/FlyStart/position = Vector2( 336, -53 )
 states/LeftTurn/node = SubResource( 4 )
-states/LeftTurn/position = Vector2( -56, -175 )
+states/LeftTurn/position = Vector2( -183, -182 )
 states/Moving/node = SubResource( 8 )
-states/Moving/position = Vector2( 48, 27 )
+states/Moving/position = Vector2( 32, 27 )
 states/RightTurn/node = SubResource( 9 )
-states/RightTurn/position = Vector2( 158, -175 )
+states/RightTurn/position = Vector2( 161, -175 )
 transitions = [ "Moving", "LeftTurn", SubResource( 10 ), "LeftTurn", "Moving", SubResource( 11 ), "Moving", "RightTurn", SubResource( 12 ), "RightTurn", "Moving", SubResource( 13 ), "Moving", "FlyStart", SubResource( 14 ), "FlyStart", "FlyLoop", SubResource( 15 ), "Moving", "FlyLoop", SubResource( 16 ), "FlyLoop", "Moving", SubResource( 17 ) ]
 start_node = "Moving"
-graph_offset = Vector2( -333.5, -176.012 )
+graph_offset = Vector2( -311.5, -185.012 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
 [node name="SunlightCharacter" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -111,6 +117,7 @@ far = 2000.0
 [node name="Hero_Model" type="Spatial" parent="."]
 
 [node name="CharacterDisplay" parent="Hero_Model" instance=ExtResource( 3 )]
+visible = false
 
 [node name="SculptedDisplay" type="MeshInstance" parent="Hero_Model"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.88856, 0 )
@@ -118,11 +125,17 @@ visible = false
 mesh = ExtResource( 2 )
 material/0 = null
 
+[node name="MangoSkeleton" parent="Hero_Model" instance=ExtResource( 4 )]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
+
+[node name="MangoArmature" parent="Hero_Model/MangoSkeleton" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0, 0 )
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 18 )
-anim_player = NodePath("../Hero_Model/CharacterDisplay/AnimationPlayer")
+anim_player = NodePath("../Hero_Model/MangoSkeleton/AnimationPlayer")
 active = true
-parameters/playback = SubResource( 19 )
+parameters/playback = SubResource( 20 )
 parameters/conditions/end_left_turn = false
 parameters/conditions/end_right_turn = false
 parameters/conditions/is_floor = true
@@ -130,4 +143,6 @@ parameters/conditions/is_jump = false
 parameters/conditions/is_not_floor = false
 parameters/conditions/left_turn = false
 parameters/conditions/right_turn = false
-parameters/Moving/blend_position = -0.766699
+parameters/Moving/blend_position = 8.02323
+
+[editable path="Hero_Model/MangoSkeleton"]
