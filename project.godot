@@ -342,7 +342,7 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "SunlightCharacter",
 "language": "GDScript",
-"path": "res://src/Testing/CharacterMovement/SunlightCharacter.gd"
+"path": "res://src/CharacterMovement/SunlightCharacter.gd"
 }, {
 "base": "QodotSpatial",
 "class": "TextureLayeredMesh",

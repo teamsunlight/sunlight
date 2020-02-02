@@ -11,7 +11,7 @@ func _input(event):
 	if event.is_action_pressed("interact") and active:
 		GameMode.tower_count += 1
 		$Sprite3D.hide()
-		$Effect.show(
+		$Effect.show()
 		$towerTop_GLOW001.show()
 		active = false
 		#Active current instance effect	

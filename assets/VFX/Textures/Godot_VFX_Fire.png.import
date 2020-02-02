@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.s3tc.stex"
-path.etc2="res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.etc2.stex"
+path.etc="res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/VFX/Textures/Godot_VFX_Fire.png"
-dest_files=[ "res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.s3tc.stex", "res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.etc2.stex" ]
+dest_files=[ "res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.s3tc.stex", "res://.import/Godot_VFX_Fire.png-9a46769035db8d542dba51fb8d7e57b1.etc.stex" ]
 
 [params]
 
