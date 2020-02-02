@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/VFX/Materiales/Shader/MI_SHADER.tres" type="Material" id=1]
+[ext_resource path="res://assets/VFX/Materiales/VFX_Clouds.tres" type="QuadMesh" id=2]
+[ext_resource path="res://assets/VFX/Materiales/ProcessMaterials/CloudsJump.tres" type="Material" id=3]
+[ext_resource path="res://assets/VFX/Materiales/ProcessMaterials/CloudsTrails.tres" type="Material" id=4]
+[ext_resource path="res://assets/VFX/Meshes/Godot_VFX_FireGround.tres" type="ArrayMesh" id=7]
+
+[node name="VFX_Scene" type="Node"]
+
+[node name="VFX_CloudsRun" type="Particles" parent="."]
+transform = Transform( 1.00896, 0, 0, 0, 1.00896, 0, 0, 0, 1.00896, -0.194122, 0.250045, -0.135233 )
+amount = 4
+lifetime = 0.65
+preprocess = 3.0
+randomness = 0.4
+visibility_aabb = AABB( -0.001, 0.096168, 0.0707773, 0.002, 0.002, 0.002 )
+process_material = ExtResource( 4 )
+draw_pass_1 = ExtResource( 2 )
+
+[node name="VFX_DarknessGround" type="CSGMesh" parent="."]
+transform = Transform( 1.91069e-15, -1, -9.16523e-08, -4.37114e-08, -4.37114e-08, 2.09676, -1, 0, -9.16523e-08, 1.31289, 0.290539, 4.40503 )
+cast_shadow = 0
+mesh = ExtResource( 7 )
+material = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="VFX_DarknessGround"]
+transform = Transform( 0.982781, -5.68424e-08, -0.184775, -0.184225, 0.0770844, -0.979857, 0.006793, 0.475507, 0.0361305, 0.428518, -2.50421, 0.754397 )
+
+[node name="VFX_CloudsJump" type="Particles" parent="."]
+amount = 5
+lifetime = 0.8
+speed_scale = 1.38
+explosiveness = 1.0
+process_material = ExtResource( 3 )
+draw_pass_1 = ExtResource( 2 )
