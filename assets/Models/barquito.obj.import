@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/barquito.obj-92a2f973b6122e987241d58650c8dede.mesh"
+
+[deps]
+
+files=[ "res://.import/barquito.obj-92a2f973b6122e987241d58650c8dede.mesh" ]
+
+source_file="res://assets/Models/barquito.obj"
+dest_files=[ "res://.import/barquito.obj-92a2f973b6122e987241d58650c8dede.mesh", "res://.import/barquito.obj-92a2f973b6122e987241d58650c8dede.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
