@@ -6,9 +6,8 @@ extends Spatial
 # var b = "text"
 var active = true
 
-
 func _input(event):
-	if event.is_action_pressed("interact") and active:
+	if event.is_action_pressed("interact") and active and !GameMode.towerB:
 		GameMode.tower_count += 1
 		$Sprite3D.hide()
 		$Effect.show()
@@ -36,10 +35,12 @@ func _on_Area_body_entered(body):
 	if body is MainCharacter and active:
 		#$Position3D/Label.show()
 		$Sprite3D.show()
+		GameMode.towerB = true
 
 
 func _on_Area_body_exited(body):
 	if body is MainCharacter:
 		#$Position3D/Label.hide()
 		$Sprite3D.hide()
+		GameMode.towerB = false
 

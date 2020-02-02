@@ -348,6 +348,11 @@ _global_script_classes=[ {
 "class": "TextureLayeredMesh",
 "language": "GDScript",
 "path": "res://addons/qodot/lib/texture_layered_mesh.gd"
+}, {
+"base": "Spatial",
+"class": "tower2",
+"language": "GDScript",
+"path": "res://src/Level/SecondTower.gd"
 } ]
 _global_script_class_icons={
 "HTerrainDataLoader": "",
@@ -417,13 +422,14 @@ _global_script_class_icons={
 "QuakeWadFile": "",
 "QuakeWadImportPlugin": "",
 "SunlightCharacter": "",
-"TextureLayeredMesh": ""
+"TextureLayeredMesh": "",
+"tower2": ""
 }
 
 [application]
 
 config/name="Sunlight"
-run/main_scene="res://src/Testing/CharacterMovement/TestScene.tscn"
+run/main_scene="res://src/Level/WorldTest.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]
