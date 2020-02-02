@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/BigRock3.obj-7793a22e626226ad99ff526fa98cf7fa.mesh"
+
+[deps]
+
+files=[ "res://.import/BigRock3.obj-7793a22e626226ad99ff526fa98cf7fa.mesh" ]
+
+source_file="res://assets/Rocks/BigRock3.obj"
+dest_files=[ "res://.import/BigRock3.obj-7793a22e626226ad99ff526fa98cf7fa.mesh", "res://.import/BigRock3.obj-7793a22e626226ad99ff526fa98cf7fa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
