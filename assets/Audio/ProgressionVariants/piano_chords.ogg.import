@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/piano_chords.ogg-81315e2d78bc0bb68741e5a3a1b09862.oggstr"
+
+[deps]
+
+source_file="res://assets/Audio/ProgressionVariants/piano_chords.ogg"
+dest_files=[ "res://.import/piano_chords.ogg-81315e2d78bc0bb68741e5a3a1b09862.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

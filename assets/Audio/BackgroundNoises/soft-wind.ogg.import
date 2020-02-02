@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/soft-wind.ogg-334953792cd9f8012c14bef61d1479b3.oggstr"
+
+[deps]
+
+source_file="res://assets/Audio/BackgroundNoises/soft-wind.ogg"
+dest_files=[ "res://.import/soft-wind.ogg-334953792cd9f8012c14bef61d1479b3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

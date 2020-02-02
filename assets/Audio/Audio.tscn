@@ -1,0 +1,171 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/Audio/ProgressionVariants/lighthearted_violin.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/Audio/ProgressionVariants/beach_ambient.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/Audio/ProgressionVariants/evil_ambient.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/Audio/BackgroundNoises/seagull.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/Audio/ProgressionVariants/deep_ambient.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/Audio/ProgressionVariants/bell_scale.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/Audio/BackgroundNoises/ocean_waves.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/Audio/ProgressionVariants/piano_scales.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/Audio/ProgressionVariants/piano_chords.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/Audio/BackgroundNoises/soft-wind.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/Audio/ProgressionVariants/piano_counterbeats.ogg" type="AudioStream" id=11]
+
+[node name="Audio" type="Spatial"]
+
+[node name="Start" type="Spatial" parent="."]
+
+[node name="ocean_waves" type="AudioStreamPlayer3D" parent="Start"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 114.864, 30, 126.19 )
+stream = ExtResource( 7 )
+unit_size = 70.0
+autoplay = true
+
+[node name="seagull" type="AudioStreamPlayer3D" parent="Start"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3877, 30, 48.2832 )
+stream = ExtResource( 4 )
+unit_size = 30.0
+autoplay = true
+
+[node name="deep_ambient" type="AudioStreamPlayer3D" parent="Start"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 114.864, 30, 126.19 )
+stream = ExtResource( 5 )
+unit_size = 25.0
+autoplay = true
+
+[node name="Center" type="Spatial" parent="."]
+
+[node name="piano_counterbeats" type="AudioStreamPlayer3D" parent="Center"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.082, 45.3161, 160.725 )
+stream = ExtResource( 11 )
+unit_size = 25.0
+autoplay = true
+
+[node name="beach_ambient" type="AudioStreamPlayer3D" parent="Center"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 194.033, 30, 191.165 )
+stream = ExtResource( 2 )
+unit_size = 5.0
+autoplay = true
+
+[node name="lighthearted_violin" type="AudioStreamPlayer3D" parent="Center"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 254.421, 45.3161, 222.641 )
+stream = ExtResource( 1 )
+unit_size = 25.0
+autoplay = true
+
+[node name="bell_scale" type="AudioStreamPlayer3D" parent="Center"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 211.134, 30, 238.275 )
+stream = ExtResource( 6 )
+unit_size = 25.0
+autoplay = true
+
+[node name="Altar" type="Spatial" parent="."]
+
+[node name="evil_ambient" type="AudioStreamPlayer3D" parent="Altar"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 360.518, 45.3161, 336.787 )
+stream = ExtResource( 3 )
+unit_size = 40.0
+autoplay = true
+
+[node name="bell_scale2" type="AudioStreamPlayer3D" parent="Altar"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 293.227, 45.3161, 261.149 )
+stream = ExtResource( 6 )
+unit_size = 25.0
+autoplay = true
+
+[node name="deep_ambient" type="AudioStreamPlayer3D" parent="Altar"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 293.227, 45.3161, 261.149 )
+stream = ExtResource( 5 )
+unit_size = 25.0
+autoplay = true
+
+[node name="LeftRuins" type="Spatial" parent="."]
+
+[node name="piano_scale" type="AudioStreamPlayer3D" parent="LeftRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 292.351, 44.8319, 179.371 )
+stream = ExtResource( 8 )
+unit_size = 25.0
+autoplay = true
+
+[node name="piano_scale2" type="AudioStreamPlayer3D" parent="LeftRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.078, 20.5736, 104.247 )
+stream = ExtResource( 8 )
+unit_size = 25.0
+autoplay = true
+
+[node name="beach_ambient2" type="AudioStreamPlayer3D" parent="LeftRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 354.576, 22.3377, 108.564 )
+stream = ExtResource( 2 )
+unit_size = 5.0
+autoplay = true
+
+[node name="piano_counterbeats" type="AudioStreamPlayer3D" parent="LeftRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 346.588, 22.3377, 105.605 )
+stream = ExtResource( 11 )
+unit_size = 25.0
+autoplay = true
+
+[node name="RightRuins" type="Spatial" parent="."]
+
+[node name="piano_chords" type="AudioStreamPlayer3D" parent="RightRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 151.76, 22.3377, 319.72 )
+stream = ExtResource( 9 )
+unit_size = 10.0
+autoplay = true
+
+[node name="bell_scale" type="AudioStreamPlayer3D" parent="RightRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 155.042, 22.3377, 325.443 )
+stream = ExtResource( 6 )
+unit_size = 35.0
+autoplay = true
+
+[node name="deep_ambient" type="AudioStreamPlayer3D" parent="RightRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 156.813, 22.3508, 324.468 )
+stream = ExtResource( 5 )
+unit_size = 10.0
+autoplay = true
+
+[node name="lighthearted_violin" type="AudioStreamPlayer3D" parent="RightRuins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 149.312, 22.3377, 321.658 )
+stream = ExtResource( 1 )
+unit_size = 10.0
+autoplay = true
+
+[node name="Borders" type="Spatial" parent="."]
+
+[node name="ocean_waves3" type="AudioStreamPlayer3D" parent="Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2345, 30, 180.648 )
+stream = ExtResource( 7 )
+unit_size = 70.0
+autoplay = true
+
+[node name="ocean_waves2" type="AudioStreamPlayer3D" parent="Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 244.435, 30, 124.606 )
+stream = ExtResource( 7 )
+unit_size = 70.0
+autoplay = true
+
+[node name="soft_wind" type="AudioStreamPlayer3D" parent="Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 422.451, 30, 184.519 )
+stream = ExtResource( 10 )
+unit_size = 100.0
+autoplay = true
+
+[node name="soft_wind2" type="AudioStreamPlayer3D" parent="Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 212.02, 30, 380.381 )
+stream = ExtResource( 10 )
+unit_size = 100.0
+autoplay = true
+
+[node name="seagull3" type="AudioStreamPlayer3D" parent="Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74204, 30, 247.873 )
+stream = ExtResource( 4 )
+unit_size = 30.0
+autoplay = true
+
+[node name="seagull2" type="AudioStreamPlayer3D" parent="Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 299.924, 30, 71.6429 )
+stream = ExtResource( 4 )
+unit_size = 30.0
+autoplay = true
