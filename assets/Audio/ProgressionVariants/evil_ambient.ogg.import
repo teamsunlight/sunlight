@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/evil_ambient.ogg-0c429806de6fff52fb6fb64e6583686b.oggstr"
+
+[deps]
+
+source_file="res://assets/Audio/ProgressionVariants/evil_ambient.ogg"
+dest_files=[ "res://.import/evil_ambient.ogg-0c429806de6fff52fb6fb64e6583686b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

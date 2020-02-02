@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/piano_scales.ogg-77831a0b0fd075f7e602b64e2b8f6001.oggstr"
+
+[deps]
+
+source_file="res://assets/Audio/ProgressionVariants/piano_scales.ogg"
+dest_files=[ "res://.import/piano_scales.ogg-77831a0b0fd075f7e602b64e2b8f6001.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

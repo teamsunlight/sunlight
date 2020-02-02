@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/Testing/CharacterMovement/SunlightCharacter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/CharacterMovement/SunlightCharacter.tscn" type="PackedScene" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -23,7 +23,7 @@ material/0 = null
 transform = Transform( 27.9252, 0, 0, 0, 0.307382, 0, 0, 0, 25.5314, 0, -0.392585, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Level/Floor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000476381, -0.0172673, -0.000465049 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000476381, -0.0172672, -0.000465049 )
 mesh = SubResource( 2 )
 material/0 = null
 

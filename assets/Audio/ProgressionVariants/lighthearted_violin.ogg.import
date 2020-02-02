@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lighthearted_violin.ogg-f86974386b84af3cfea4fb4c5ff678fa.oggstr"
+
+[deps]
+
+source_file="res://assets/Audio/ProgressionVariants/lighthearted_violin.ogg"
+dest_files=[ "res://.import/lighthearted_violin.ogg-f86974386b84af3cfea4fb4c5ff678fa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
