@@ -117,18 +117,18 @@ output_port_for_preview = 0
 [sub_resource type="VisualShaderNodeColorUniform" id=41]
 uniform_name = "ColorUniform"
 
-[sub_resource type="VisualShaderNodeColorUniform" id=44]
+[sub_resource type="VisualShaderNodeColorUniform" id=42]
 uniform_name = "Color22"
 
-[sub_resource type="VisualShaderNodeVectorOp" id=45]
+[sub_resource type="VisualShaderNodeVectorOp" id=43]
 output_port_for_preview = 0
 operator = 2
 
-[sub_resource type="VisualShaderNodeVectorOp" id=42]
+[sub_resource type="VisualShaderNodeVectorOp" id=44]
 output_port_for_preview = 0
 operator = 6
 
-[sub_resource type="VisualShaderNodeVectorOp" id=43]
+[sub_resource type="VisualShaderNodeVectorOp" id=45]
 operator = 2
 
 [resource]
@@ -389,9 +389,9 @@ nodes/fragment/4/node = SubResource( 27 )
 nodes/fragment/4/position = Vector2( -1680, 180 )
 nodes/fragment/5/node = SubResource( 38 )
 nodes/fragment/5/position = Vector2( -840, 220 )
-nodes/fragment/6/node = SubResource( 42 )
+nodes/fragment/6/node = SubResource( 44 )
 nodes/fragment/6/position = Vector2( -620, 360 )
-nodes/fragment/9/node = SubResource( 43 )
+nodes/fragment/9/node = SubResource( 45 )
 nodes/fragment/9/position = Vector2( -1840, 160 )
 nodes/fragment/10/node = SubResource( 1 )
 nodes/fragment/10/position = Vector2( -2040, 240 )
@@ -467,8 +467,8 @@ nodes/fragment/51/node = SubResource( 40 )
 nodes/fragment/51/position = Vector2( -120, 320 )
 nodes/fragment/52/node = SubResource( 41 )
 nodes/fragment/52/position = Vector2( -300, 220 )
-nodes/fragment/53/node = SubResource( 44 )
+nodes/fragment/53/node = SubResource( 42 )
 nodes/fragment/53/position = Vector2( -640, 240 )
-nodes/fragment/54/node = SubResource( 45 )
+nodes/fragment/54/node = SubResource( 43 )
 nodes/fragment/54/position = Vector2( -360, 400 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 5, 0, 3, 0, 9, 0, 10, 0, 9, 1, 4, 0, 17, 0, 18, 0, 19, 0, 20, 0, 19, 1, 4, 1, 21, 0, 19, 0, 21, 1, 17, 0, 22, 0, 21, 0, 22, 1, 22, 0, 2, 0, 23, 0, 17, 1, 24, 0, 23, 0, 18, 0, 23, 1, 9, 0, 4, 0, 26, 0, 27, 0, 28, 0, 27, 1, 37, 0, 29, 0, 30, 0, 36, 0, 31, 0, 36, 1, 37, 1, 32, 0, 36, 0, 32, 1, 29, 0, 33, 0, 32, 0, 33, 1, 33, 0, 25, 0, 34, 0, 29, 1, 35, 0, 34, 0, 30, 0, 34, 1, 27, 0, 37, 0, 25, 0, 5, 1, 39, 0, 40, 0, 41, 0, 40, 1, 50, 0, 42, 0, 43, 0, 49, 0, 44, 0, 49, 1, 50, 1, 45, 0, 49, 0, 45, 1, 42, 0, 46, 0, 45, 0, 46, 1, 46, 0, 38, 0, 47, 0, 42, 1, 48, 0, 47, 0, 43, 0, 47, 1, 40, 0, 50, 0, 38, 0, 6, 1, 5, 0, 6, 0, 51, 0, 0, 0, 51, 0, 0, 5, 52, 0, 51, 0, 53, 0, 54, 0, 6, 0, 54, 1, 54, 0, 51, 1 )

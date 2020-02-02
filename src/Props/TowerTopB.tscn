@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/Materials/rock.tres" type="Material" id=1]
 [ext_resource path="res://assets/Materials/glow_mat.tres" type="Material" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Materials/Esto_No_Sirve/Glow.material" type="Material" id=4]
 [ext_resource path="res://assets/Materials/Esto_No_Sirve/Material.material" type="Material" id=5]
 [ext_resource path="res://assets/Materials/picturetopeople.org-7b0df927e41afbbe928aecc852517e46178c806de69af4d7e3.png" type="Texture" id=6]
+[ext_resource path="res://assets/VFX/Materiales/beam.tres" type="Shader" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cylinder.004"
@@ -60,10 +61,19 @@ data = PoolVector3Array( -0.0072, 3.5874, 0.2752, -0.0188, 3.3963, 0.2756, -0.04
 [sub_resource type="CylinderShape" id=5]
 height = 0.865122
 
-[sub_resource type="SpatialMaterial" id=6]
-flags_transparent = true
-params_blend_mode = 1
-albedo_color = Color( 1, 0.984314, 0.00784314, 1 )
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 7 )
+shader_param/ColorUniform = Color( 0.941176, 0.0627451, 0.0627451, 1 )
+shader_param/Color22 = Color( 1, 0.870588, 0.294118, 1 )
+shader_param/Scale_UVs1 = Vector3( 0.35, 0.1, 0 )
+shader_param/UVs1_X = 0.2
+shader_param/UVs1_Y = -0.25
+shader_param/Scale_UVs2 = Vector3( 0.35, 1, 0 )
+shader_param/UVs1_X2 = -0.2
+shader_param/UVs1_Y2 = -2.0
+shader_param/Scale_UVs3 = Vector3( 2, 2, 2 )
+shader_param/UVs1_X3 = 0.1
+shader_param/UVs1_Y3 = -5.0
 
 [sub_resource type="CylinderMesh" id=7]
 material = SubResource( 6 )
